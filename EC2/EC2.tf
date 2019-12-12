@@ -57,9 +57,10 @@ resource "aws_subnet" "wp-public-tf" {
     }
 }
 
-output "subnet-id" {
+output "subnet-id-1" {
     value = [aws_subnet.wp-public-tf.id]
 }
+
 
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = aws_vpc.default.id
@@ -71,6 +72,9 @@ resource "aws_subnet" "wp-private-tf" {
     }
 }
 
+output "subnet-id-2" {
+    value = [aws_subnet.wp-private-tf.id]
+}
 
 ######################################
 #         Route Tables               #
