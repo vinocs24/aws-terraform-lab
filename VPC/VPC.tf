@@ -30,6 +30,10 @@ resource "aws_subnet" "wp-public-tf" {
     }
 }
 
+output "subnet_pub" {
+  value = aws_subnet.wp-public-tf.id
+}
+
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = aws_vpc.default.id
     cidr_block        = var.private_subnet_cidr_block
@@ -88,7 +92,8 @@ resource "aws_security_group" "wp-sg-tf" {
   }
 }
 
-output "id" {
-  value = aws_vpc.default.id
+output "security_groups_1" {
+  value = aws_security_group.wp-sg-tf.id
 }
+
 
