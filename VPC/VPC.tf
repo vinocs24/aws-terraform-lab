@@ -60,7 +60,7 @@ resource "aws_route_table" "wp-rt-public-tf" {
 resource "aws_security_group" "wp-sg-tf" {
   name        = "wp-instance-tf"
   description = "Security group for EC2 Instances"
-  vpc_id      = "aws_vpc.default.id"
+  vpc_id      = aws_vpc.default.id
 
   ingress {
     from_port   = 80
