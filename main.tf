@@ -18,8 +18,9 @@ module "VPC" {
 
 module "EC2" {
     source = "./EC2"
-    subnet_id         = "module.VPC.id"
-    security_groups   = "module.vpc.id"
+    vpc_id                   = "module.VPC.id"
+    subnet_id_wa             = "module.VPC.subnet_pub"
+    security_groups_wa       = "module.vpc.security_groups_1"
 }
 
   /*
