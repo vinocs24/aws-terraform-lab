@@ -1,3 +1,3 @@
 output "id" {
-  value = aws_vpc.terra-vpc.id
+  value = aws_vpc.default.id
 }
