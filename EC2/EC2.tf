@@ -1,11 +1,6 @@
 # EC2 Instances
 
-#module "ec2_cluster" {
- 
-
 resource "aws_instance" "ec2-instance" {
-    source                      = "aws-terraform-lab/VPC/VPC"
-    version                     = "~> 2.0"
     ami                         = var.ami
     instance_type               = var.instance_type
     availability_zone           = "us-west-2a"
