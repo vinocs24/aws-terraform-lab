@@ -58,7 +58,7 @@ resource "aws_subnet" "wp-public-tf" {
 }
 
 output "subnet-id" {
-    value = [aws_elb.aws_subnet.wp-public-tf.id]
+    value = [aws_subnet.wp-public-tf.id]
 }
 
 resource "aws_subnet" "wp-private-tf" {
