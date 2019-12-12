@@ -12,15 +12,8 @@ provider "aws" {
   region = "us-west-2"
 }
 
-module "VPC" {
-    source = "./VPC"
-}
-
 module "EC2" {
-    source = "./EC2"
-    vpc_id                   = "module.VPC.id"
-    subnet_id_wa             = "module.VPC.subnet_pub"
-    security_groups_wa       = "module.vpc.security_groups_1"
+
 }
 
   /*
@@ -28,6 +21,10 @@ module "ELB" {
     source = "./ELB"
 }
 
+module "VPC" {
+    source = "./VPC"
+}
+    
 module "RDS" {
   source  = "./RDS"
 }*/
