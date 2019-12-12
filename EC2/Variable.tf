@@ -23,7 +23,7 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "subnet_id" {}
-variable "security_groups" {}
+variable "subnet_id_wa" {}
+variable "security_groups_wa" {}
 
 
