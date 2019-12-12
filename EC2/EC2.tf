@@ -57,6 +57,10 @@ resource "aws_subnet" "wp-public-tf" {
     }
 }
 
+output "subnet-id" {
+    value = [aws_elb.aws_subnet.wp-public-tf.id]
+}
+
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = aws_vpc.default.id
     cidr_block        = var.private_subnet_cidr_block
