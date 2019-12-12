@@ -19,7 +19,8 @@ module "EC2" {
 
 module "ELB" {
     source = "./ELB"
-    sub-id = "module.EC2.subnet-id"
+    sub-id-1 = "module.EC2.subnet-id-1"
+    sub-id-2 = "module.EC2.subnet-id-2"
 }
 
   
