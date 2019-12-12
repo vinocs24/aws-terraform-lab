@@ -87,3 +87,8 @@ resource "aws_security_group" "wp-sg-tf" {
     Name = "wp-sg-tf"
   }
 }
+
+output "id" {
+  value = aws_vpc.default.id
+}
+
