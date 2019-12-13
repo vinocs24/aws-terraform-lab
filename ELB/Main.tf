@@ -1,6 +1,6 @@
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
-    subnets            = ["aws_subnet.wp-public-tf.id","aws_subnet.wp-private-tf.id"]
+    subnet_ids            = ["aws_subnet.wp-public-tf.id","aws_subnet.wp-private-tf.id"]
     security_groups    = ["EC2/aws_security_group.wp-elb-tf.id"]
 
     listener {
