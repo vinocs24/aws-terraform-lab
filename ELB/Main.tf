@@ -1,6 +1,5 @@
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
-    vpc_id             = [EC2/aws_vpc.default.id]
     availability_zones = [var.availability_zones]
     security_groups    = ["EC2/aws_security_group.wp-elb-tf.id"]
 
