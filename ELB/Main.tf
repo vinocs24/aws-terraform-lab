@@ -35,14 +35,14 @@ resource "aws_elb" "default" {
 
 resource "aws_subnet" "wp-public-tf" {
     vpc_id            = "EC2/aws_vpc.default.id"
-    cidr_block        = "Variable/var.public_subnet_cidr_block"
+    cidr_block        = "10.1.1.0/24"
     availability_zone = "us-west-2a"
  
 }
 
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = "EC2/aws_vpc.default.id"
-    cidr_block        = "Variable/var.private_subnet_cidr_block"
+    cidr_block        = "10.1.2.0/24"
     availability_zone = "us-west-2b"
 
 }
