@@ -29,7 +29,7 @@ resource "aws_vpc" "default" {
     }
 }
 
-output "vpc-id" {
+output "vpc" {
     value = [aws_vpc.default.id]
 }
 
