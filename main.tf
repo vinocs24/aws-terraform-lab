@@ -19,7 +19,7 @@ module "EC2" {
 
 module "ELB" {
     source = "./ELB"
-    vpc-id       = "module.EC2.aws_vpc.default.id"
+    vpc-id       = "module.EC2.vpc.id"
   
 }
 
