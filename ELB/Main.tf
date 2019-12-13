@@ -1,6 +1,6 @@
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
-    #subnet_ids            = ["aws_subnet.wp-public-tf.id","aws_subnet.wp-private-tf.id"]
+    availability_zones = [var.availability_zones]
     security_groups    = ["EC2/aws_security_group.wp-elb-tf.id"]
 
     listener {
@@ -28,80 +28,3 @@ resource "aws_elb" "default" {
         Name = "Terra-ELB"
     }
 }
-
-######################################
-#             VPC                    #
-######################################
-
-resource "aws_vpc" "default" {
-    cidr_block = var.vpc_cidr_block
-
-    tags = {
-       Name = "Terra-VPC"
-    }
-}
-
-
-######################################
-#         Internet Gateway           #
-######################################
-
-resource "aws_internet_gateway" "default" {
-    vpc_id = aws_vpc.default.id
-
-    tags = {
-       Name = "Terra-IG"
-    }
-}
-
-
-######################################
-#         Subnets                    #
-######################################
-
-resource "aws_subnet" "wp-public-tf" {
-    vpc_id            = aws_vpc.default.id
-    cidr_block        = var.public_subnet_cidr_block
-    availability_zone = "us-west-2a"
-
-    tags = {
-       Name = "Terra-public-Sub"
-    }
-}
-
-
-resource "aws_subnet" "wp-private-tf" {
-    vpc_id            = aws_vpc.default.id
-    cidr_block        = var.private_subnet_cidr_block
-    availability_zone = "us-west-2b"
-
-    tags = {
-       Name = "Terra-private-Sub"
-    }
-}
-
-
-######################################
-#         Route Tables               #
-######################################
-
-resource "aws_route_table" "wp-rt-public-tf" {
-    vpc_id = aws_vpc.default.id
-
-    route {
-        cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.default.id
-    }
-
-    tags = {
-       Name = "Terra-RT"
-    }
-}
-
-resource "aws_route_table_association" "wp-public-tf" {
-    subnet_id = aws_subnet.wp-public-tf.id
-    route_table_id = aws_route_table.wp-rt-public-tf.id
-}
-
-
-
