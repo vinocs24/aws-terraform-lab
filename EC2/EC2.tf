@@ -29,6 +29,9 @@ resource "aws_vpc" "default" {
     }
 }
 
+output "vpc-id" {
+    value = [aws_vpc.default.id]
+}
 
 ######################################
 #         Internet Gateway           #
