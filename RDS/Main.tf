@@ -15,7 +15,7 @@ resource "aws_db_instance" "wordpress" {
     username               = var.db_user
     password               = var.db_password
     availability_zone      = "us-west-2b"
-    vpc_security_group_ids = [security-group-db]
+    vpc_security_group_ids = [var.security-group-db]
     multi_az               = false
     db_subnet_group_name   = aws_db_subnet_group.default.id
     parameter_group_name   = "default.mysql5.7"
