@@ -16,15 +16,15 @@ module "EC2" {
     source = "./EC2"
 }
 
-
+/*
 module "ELB" {
     source = "./ELB"
-    vpc-id       = "module.EC2.vpc.id"
+ 
   
 }
 
   
-  /*
+  
 module "VPC" {
     source = "./VPC"
 }
