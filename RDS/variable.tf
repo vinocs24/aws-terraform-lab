@@ -1,3 +1,9 @@
+variable "vpc-id" {}
+variable "subnet-pub" {}
+variable "subnet-pri" {}
+variable "security-group-db" {}
+
+
 variable "db_instance_type" {
   description = "RDS instance type"
   default = "db.t2.micro"
