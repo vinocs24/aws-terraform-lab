@@ -25,12 +25,11 @@ module "ELB" {
   
 }
   
-
- /* 
-module "VPC" {
-    source = "./VPC"
-}
-    
+  
 module "RDS" {
   source  = "./RDS"
-}*/
+  vpc-id              = module.EC2.id
+  subnet-pub          = module.EC2.subnet1-id
+  subnet-pri          = module.EC2.subnet2-id 
+  security-group-db   = module.security-group-db-id
+}
