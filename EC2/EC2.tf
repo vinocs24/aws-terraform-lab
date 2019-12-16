@@ -16,10 +16,6 @@ resource "aws_instance" "ec2-instance" {
     }
 }
 
-output "instance" {
-    value = aws_instance.ec2-instance.id
-}
-
 
 ######################################
 #             VPC                    #
@@ -33,9 +29,6 @@ resource "aws_vpc" "default" {
     }
 }
 
-output "vpc-id" {
-    value = "aws_vpc.default.id"
-}
 
 ######################################
 #         Internet Gateway           #
@@ -64,9 +57,6 @@ resource "aws_subnet" "wp-public-tf" {
     }
 }
 
-output "sub-pub" {
-    value = [aws_subnet.wp-public-tf.id]
-}
 
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = aws_vpc.default.id
@@ -78,9 +68,7 @@ resource "aws_subnet" "wp-private-tf" {
     }
 }
 
-output "sub-pri" {
-    value = [aws_subnet.wp-private-tf.id]
-}
+
 
 ######################################
 #         Route Tables               #
