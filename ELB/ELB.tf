@@ -1,3 +1,7 @@
+module "EC2" {
+    source = "./EC2"
+} 
+
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
     subnets            = [aws_subnet.wp-public-tf.id]
@@ -29,9 +33,6 @@ resource "aws_elb" "default" {
     }
 }
 
-module "EC2" {
-    source = "./EC2"
-} 
 
 
 
