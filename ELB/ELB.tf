@@ -1,8 +1,5 @@
-module "EC2" {
-    source = "./EC2"
-} 
-
 resource "aws_elb" "default" {
+    source = "./EC2"
     name               = "wp-elb-tf"
     subnets            = [aws_subnet.wp-public-tf.id]
     security_groups    = [aws_security_group.wp-elb-tf.id]
