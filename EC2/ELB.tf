@@ -1,3 +1,4 @@
+/*
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
     subnets            = [aws_subnet.wp-public-tf.id]
@@ -43,3 +44,4 @@ resource "aws_elb" "default" {
 output "elb_dns" {
     value = [aws_elb.default.dns_name]
 }
+*/
