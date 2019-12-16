@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "ELB" {
-    source = "./ELB"
+    source = "./EC2"
    
 }
   
