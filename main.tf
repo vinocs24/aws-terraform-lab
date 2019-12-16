@@ -21,6 +21,7 @@ module "ELB" {
     vpc-id          = module.EC2.id
     subnet-pub      = module.EC2.subnet1-id
     security-group  = module.EC2.security-group-id
+    instance-id     = module.EC2.instance  
   
 }
   
