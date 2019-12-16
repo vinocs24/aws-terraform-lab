@@ -12,19 +12,20 @@ provider "aws" {
   region = "us-west-2"
 }
 
+module "ELB" {
+    source = "./ELB"
+    source = "./EC2" 
+}
+  
 module "EC2" {
     source = "./EC2"
 }
 
-/*
-module "ELB" {
-    source = "./ELB"
- 
-  
-}
+
+
 
   
-  
+ /* 
 module "VPC" {
     source = "./VPC"
 }
