@@ -1,9 +1,3 @@
-variable "instance-m" {}
-variable "vpc-m" {}
-variable "sub-m1" {}
-variable "sub-m2" {}
-
-
 variable "region" {
   description = "AWS Region"
   default     = "us-west-2"
