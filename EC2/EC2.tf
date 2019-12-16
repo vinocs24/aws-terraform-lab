@@ -29,6 +29,9 @@ resource "aws_vpc" "default" {
     }
 }
 
+output "id" {
+  value = aws_vpc.default.id
+}
 
 ######################################
 #         Internet Gateway           #
@@ -58,6 +61,14 @@ resource "aws_subnet" "wp-public-tf" {
 }
 
 
+output "subnet1-id" {
+  value = aws_subnet.wp-public-tf.id
+}
+
+output "subnet1-cidr" {
+  value = aws_subnet.wp-public-tf.cidr_block}"
+}
+
 resource "aws_subnet" "wp-private-tf" {
     vpc_id            = aws_vpc.default.id
     cidr_block        = var.private_subnet_cidr_block
@@ -68,7 +79,13 @@ resource "aws_subnet" "wp-private-tf" {
     }
 }
 
+output "subnet2-id" {
+  value = aws_subnet.wp-private-tf.id
+}
 
+output "subnet2-cidr" {
+  value = aws_subnet.wp-private-tf.cidr_block}"
+}
 
 ######################################
 #         Route Tables               #
@@ -182,4 +199,8 @@ resource "aws_security_group" "wp-elb-tf" {
   tags = {
     Name = "Terra-ELB"
   }
+}
+
+output "security-group-id" {
+  value = aws_security_group.wp-elb-tf.id
 }
