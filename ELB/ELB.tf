@@ -1,7 +1,7 @@
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
-    subnets            = var.subnet-pub
-    security_groups    = var.security-group
+    subnets            = [var.subnet-pub]
+    security_groups    = [var.security-group]
 
     listener {
         instance_port     = 80
