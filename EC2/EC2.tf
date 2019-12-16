@@ -16,6 +16,10 @@ resource "aws_instance" "ec2-instance" {
     }
 }
 
+output "instance" {
+  value = aws_instance.ec2-instance.id
+}
+
 
 ######################################
 #             VPC                    #
