@@ -11,22 +11,22 @@ variable "db_instance_type" {
 
 variable "db_name" {
   description = "RDS DB name"
-  default = "wordpressdb"
+  default = "wordpresstest"
 }
 
 variable "db_user" {
   description = "RDS DB username"
-  default = "example"
+  default = "vinoth"
 }
 
 variable "db_password" {
   description = "RDS DB password"
-  default = "Qwerty12345-"
+  default = "Vino@123"
 }
 
 variable "wp_title" {
   description = "Wordpress title"
-  default = "My Wordpress on ECS"
+  default = "My Wordpress on Terraform"
 }
 
 variable "wp_user" {
@@ -36,7 +36,7 @@ variable "wp_user" {
 
 variable "wp_password" {
   description = "Wordpress password"
-  default = "Qwerty12345-"
+  default = "Vino@123"
 }
 
 variable "wp_mail" {
