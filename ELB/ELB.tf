@@ -1,5 +1,4 @@
 resource "aws_elb" "default" {
-    source = "./EC2"
     name               = "wp-elb-tf"
     subnets            = var.subnet-pub
     security_groups    = var.security-group
