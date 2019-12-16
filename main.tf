@@ -31,5 +31,5 @@ module "RDS" {
   vpc-id              = module.EC2.id
   subnet-pub          = module.EC2.subnet1-id
   subnet-pri          = module.EC2.subnet2-id 
-  security-group-db   = module.security-group-db-id
+  security-group-db   = module.EC2.security-group-db-id
 }
