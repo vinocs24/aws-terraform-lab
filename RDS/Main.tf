@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "default" {
-    name        = "wp-db-subnet-tf"
+    name        = "wp-db-subnet-rds"
     description = "VPC Subnets"
     subnet_ids  = [var.subnet-pub, var.subnet-pri]
 }
