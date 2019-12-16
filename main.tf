@@ -13,7 +13,11 @@ provider "aws" {
 }
 
 module "ELB" {
-    source = "./EC2"
+    source = "./ELB"
+    instance-m = "module.EC2.instance"
+    vpc-m = "module.EC2.vpc-id"
+    sub-m1 = "module.EC2.sub-pub"
+    sub-m2 = "module.EC2.sub-pri"
    
 }
   
