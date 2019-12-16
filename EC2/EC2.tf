@@ -17,7 +17,7 @@ resource "aws_instance" "ec2-instance" {
 }
 
 output "instance" {
-    value = [aws_instance.ec2-instance.id]
+    value = aws_instance.ec2-instance.id
 }
 
 
@@ -34,7 +34,7 @@ resource "aws_vpc" "default" {
 }
 
 output "vpc-id" {
-    value = [aws_vpc.default.id]
+    value = "aws_vpc.default.id"
 }
 
 ######################################
