@@ -12,19 +12,19 @@ provider "aws" {
   region = "us-west-2"
 }
 
-module "ELB" {
-    source = "./ELB"
-  
-}
-  
 module "EC2" {
     source = "./EC2"
 }
-
-
-
-
   
+module "ELB" {
+    source = "./ELB"
+    vpc-id          = module.EC2.id
+    subnet-pub      = module.EC2.subnet1-id
+    security-group  = module.EC2.security-group-id
+  
+}
+  
+
  /* 
 module "VPC" {
     source = "./VPC"
