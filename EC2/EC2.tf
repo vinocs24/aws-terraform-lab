@@ -181,6 +181,10 @@ resource "aws_security_group" "wp-db-sg-tf" {
   }
 }
 
+output "security-group-db-id" {
+  value = aws_security_group.wp-db-sg-tf.id
+}
+
 resource "aws_security_group" "wp-elb-tf" {
   name        = "wp-sg-elb-tf"
   description = "Security Group for the ELB"
