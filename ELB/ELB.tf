@@ -18,7 +18,7 @@ resource "aws_elb" "default" {
         interval            = 30
     }
 
-    instances                   = var.instance-id.*.id
+    instances                   = var.instance-id
     cross_zone_load_balancing   = true
     idle_timeout                = 100
     connection_draining         = true
