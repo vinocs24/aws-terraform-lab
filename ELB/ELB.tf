@@ -29,7 +29,7 @@ resource "aws_elb" "default" {
     }
 }
 
-module "ELB" {
+module "EC2" {
     source = "./EC2"
 } 
 
