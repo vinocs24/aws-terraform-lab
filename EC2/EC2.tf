@@ -66,7 +66,7 @@ output "subnet1-id" {
 }
 
 output "subnet1-cidr" {
-  value = aws_subnet.wp-public-tf.cidr_block}"
+  value = aws_subnet.wp-public-tf.cidr_block
 }
 
 resource "aws_subnet" "wp-private-tf" {
@@ -84,7 +84,7 @@ output "subnet2-id" {
 }
 
 output "subnet2-cidr" {
-  value = aws_subnet.wp-private-tf.cidr_block}"
+  value = aws_subnet.wp-private-tf.cidr_block
 }
 
 ######################################
