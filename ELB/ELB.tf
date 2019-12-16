@@ -1,6 +1,6 @@
 resource "aws_elb" "default" {
     name               = "wp-elb-tf"
-    subnets            = [aws_subnet.wp-public-tf.id]
+    subnets            = [var.sub-m1]
     security_groups    = [aws_security_group.wp-elb-tf.id]
 
     listener {
@@ -18,7 +18,7 @@ resource "aws_elb" "default" {
         interval            = 30
     }
 
-    instances                   = aws_instance.ec2-instance.*.id
+    instances                   = var.instance.*.id
     cross_zone_load_balancing   = true
     idle_timeout                = 100
     connection_draining         = true
