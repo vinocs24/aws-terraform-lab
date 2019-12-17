@@ -14,7 +14,7 @@ resource "aws_elb" "default" {
         healthy_threshold   = 2
         unhealthy_threshold = 2
         timeout             = 5
-        target              = "HTTP:80/wp-content"
+        target              = "HTTP:80/wp-admin/index.php"
         interval            = 30
     }
 
